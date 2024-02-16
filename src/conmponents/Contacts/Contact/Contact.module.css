@@ -1,0 +1,34 @@
+.card {
+  /* min-width: 300px; */
+  justify-content: space-between;
+  display: flex;
+  gap: 100px;
+  margin-bottom: 20px;
+  border: 1px orange solid;
+  padding: 15px 15px;
+}
+
+.item {
+  list-style: none;
+  text-align: left;
+  padding: 0 0;
+  margin: 0 0;
+}
+
+.text {
+  display: block;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.btn {
+  display: inline-flexbox;
+  padding: 5px 15px;
+}
+
+p {
+  margin: 0 0;
+  padding: 0 0;
+}
