@@ -4,8 +4,7 @@ import * as Yup from "yup";
 
 import css from "../ContactForm/ContactForm.module.css";
 
-
-export const ContactForm = ({onAddContact}) => {
+export const ContactForm = ({ onAddContact }) => {
   const initialValues = {
     name: "",
     number: "",
@@ -15,7 +14,7 @@ export const ContactForm = ({onAddContact}) => {
 
   const handleSubmit = (values, actions) => {
     console.log(values);
-    onAddContact(values)
+    onAddContact(values);
     actions.resetForm();
   };
 
