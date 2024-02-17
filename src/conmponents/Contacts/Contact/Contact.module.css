@@ -1,11 +1,10 @@
 .card {
-  /* min-width: 300px; */
   justify-content: space-between;
   display: flex;
-  gap: 100px;
+  gap: 10px;
   margin-bottom: 20px;
   border: 1px orange solid;
-  padding: 15px 15px;
+  padding: 7px 15px;
 }
 
 .item {
@@ -15,17 +14,26 @@
   margin: 0 0;
 }
 
-.text {
-  display: block;
-}
-
 .title {
   font-weight: 700;
 }
 
 .btn {
-  display: inline-flexbox;
-  padding: 5px 15px;
+  margin: 0 0;
+  padding: 5px 14px;
+  color: green;
+  background-color: orange;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0%;
+  /* width: 70px; */
+  
+}
+
+.btn:hover {
+  background: gold;
+  color: #000;
+  /* border: none; */
 }
 
 p {
