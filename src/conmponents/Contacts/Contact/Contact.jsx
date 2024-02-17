@@ -1,7 +1,5 @@
 import css from "../Contact/Contact.module.css";
-// import { GiDiceSixFacesThree } from "react-icons/gi";
 import { Gi3DMeeple } from "react-icons/gi";
-// import { GiHuntingHorn } from "react-icons/gi";
 import { GiPerspectiveDiceSixFacesOne } from "react-icons/gi";
 
 export const Contact = ({ name, number, onDelete }) => {
