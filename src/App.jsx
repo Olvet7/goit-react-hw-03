@@ -38,8 +38,11 @@ export default function App() {
     if (isDuplicateName) {
       // alert(`Already in list`);
       Notify.warning("Already in list", {
-        width: '200px',
-        fontSize: '20px',
+        width: "200px",
+        fontSize: "20px",
+        position: "right-top",
+        distance: "50px",
+        // opacity: 0.5,
       });
       return;
     }
