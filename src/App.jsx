@@ -7,7 +7,7 @@ import { ContactForm } from "./conmponents/ContactForm/ContactForm";
 import { ContactList } from "./conmponents/Contacts/ContactList/ContactList";
 import { SearchBar } from "./conmponents/SearchBar/SearchBar";
 
-// import "./App.css";
+import "./App.css";
 
 export default function App() {
   const [search, setSearch] = useState("");
@@ -36,13 +36,11 @@ export default function App() {
       (contact) => contact.name === newContact.name
     );
     if (isDuplicateName) {
-      // alert(`Already in list`);
       Notify.warning("Already in list", {
         width: "200px",
         fontSize: "20px",
         position: "right-top",
         distance: "50px",
-        // opacity: 0.5,
       });
       return;
     }
@@ -67,7 +65,6 @@ export default function App() {
     <>
       <h3>Phonebook</h3>
       <SearchBar value={search} onChange={handleSearchChange} />
-      {/* <ContactForm contacts={contacts}/> */}
       <ContactForm onAddContact={handleAddContact} />
       <ContactList
         contacts={filteredContacts}
