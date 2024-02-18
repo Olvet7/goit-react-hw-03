@@ -1,5 +1,5 @@
-import css from "../../conmponents/SearchBar/SearchBar.module.css";
-export const SearchBar = ({ value, onChange }) => {
+import css from "./SearchBox.module.css";
+export const SearchBox = ({ value, onChange }) => {
   const handleInputChange = (e) => {
     onChange(e.target.value);
   };

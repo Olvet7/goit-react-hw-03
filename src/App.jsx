@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 import "notiflix/dist/notiflix-3.2.7.min.css";
 
 import { ContactForm } from "./conmponents/ContactForm/ContactForm";
 import { ContactList } from "./conmponents/Contacts/ContactList/ContactList";
-import { SearchBar } from "./conmponents/SearchBar/SearchBar";
+import { SearchBox } from "./conmponents/SearchBox/SearchBox";
 
 import "./App.css";
 
@@ -20,16 +20,22 @@ export default function App() {
     );
   });
 
+  useEffect(() => {
+    const savedContacts = JSON.parse(window.localStorage.getItem("contacts"));
+    if(savedContacts) {
+      setContacts(savedContacts)
+    } 
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("contacts", JSON.stringify(contacts))
+  }, [contacts])
+
+  
+
   const handleSearchChange = (value) => {
     setSearch(value);
   };
-
-  // const contacts = [
-  //   {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
-  //   {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
-  //   {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
-  //   {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
-  // ]
 
   const handleAddContact = (newContact) => {
     const isDuplicateName = contacts.some(
@@ -64,7 +70,7 @@ export default function App() {
   return (
     <>
       <h3>Phonebook</h3>
-      <SearchBar value={search} onChange={handleSearchChange} />
+      <SearchBox value={search} onChange={handleSearchChange} />
       <ContactForm onAddContact={handleAddContact} />
       <ContactList
         contacts={filteredContacts}
